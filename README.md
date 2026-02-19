@@ -1,59 +1,374 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🤖 Autonomous Instagram Social Media Agent
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+An AI-driven Instagram management system that ingests profiles, analyzes content and audience patterns, generates strategy, schedules posts, creates captions, and publishes automatically via Instagram Graph API.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# 🎯 Purpose
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The goal of this project is to build an **autonomous social media management agent** that can:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Understand Instagram profiles and content history
+- Extract strategic insights using AI
+- Automatically plan posting schedules
+- Generate content aligned with brand strategy
+- Publish posts to Instagram
+- Provide dashboard visibility
 
-## Learning Laravel
+This system reduces manual social media management effort and enables data-driven content automation.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# ✅ Current Capacity
 
-## Laravel Sponsors
+The system currently supports:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📷 Instagram Integration
 
-### Premium Partners
+- Connect Instagram Business account via Graph API
+- Store credentials securely
+- Publish scheduled posts
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🧠 Profile Intelligence
 
-## Contributing
+- Import Instagram profile posts
+- AI analysis of each post (ScaleDown)
+- Aggregated profile strategy generation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 📅 Autonomous Planning
 
-## Code of Conduct
+- Strategy-based scheduling engine
+- Automatic content generation
+- Scheduled publishing
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📊 Dashboard
 
-## Security Vulnerabilities
+- Profile insights visualization
+- Recent posts display
+- Scheduled content view
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 📸 Schedule Post — Dashboard Preview
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![Schedule Post Interface](docs/images/schedule-dashboard.png)
+
+> Replace the above image with your actual screenshot (`docs/images/...`)
+
+---
+
+# 🚀 Future Scope
+
+Planned enhancements:
+
+- Multi-account management
+- Comment ingestion & auto-reply
+- Analytics charts & engagement trends
+- Approval workflow before publish
+- Competitor analysis agent
+- Optimal time prediction via ML
+- Campaign planning calendar
+- Reel & carousel publishing support
+- Token auto-refresh system
+
+---
+
+# 🧭 Architecture Overview
+
+The system follows an **AI-agent pipeline architecture**:
+
+```
+Instagram Import
+      ↓
+Post Analysis (ScaleDown)
+      ↓
+Profile Insight Aggregation
+      ↓
+Scheduling Engine
+      ↓
+Content Generation
+      ↓
+Publishing Engine (Graph API)
+      ↓
+Dashboard
+```
+
+Each stage enriches data with intelligence and passes it to the next.
+
+---
+
+# 🤖 Agents Used
+
+## 1️⃣ Post Analysis Agent
+
+Analyzes individual posts using AI.
+**Outputs:** topic, intent, tone, summary, keywords
+
+## 2️⃣ Profile Insight Agent
+
+Aggregates post insights into strategy.
+**Outputs:** content pillars, brand voice, audience type, strategy recommendations
+
+## 3️⃣ Scheduling Agent
+
+Creates posting schedule based on strategy.
+**Outputs:** scheduled dates, posting frequency, content mix
+
+## 4️⃣ Content Generation Agent
+
+Creates captions aligned with strategy.
+**Outputs:** captions, topics, hashtags
+
+## 5️⃣ Publishing Agent
+
+Publishes scheduled posts via Instagram Graph API.
+**Outputs:** published IG media, status updates
+
+---
+
+# 🗄️ Models Used
+
+Core database models:
+
+- **Profile** — Instagram profile metadata
+- **Post** — raw imported posts
+- **PostInsight** — AI analysis per post
+- **ProfileInsight** — aggregated strategy
+- **InstagramAccount** — connected IG credentials
+- **ScheduledPost** — planned/published content
+
+---
+
+# ⚙️ Backend Architecture
+
+The backend follows a **Service + Job + Model architecture**:
+
+```
+Controllers
+   ↓
+Jobs (Queue)
+   ↓
+Services
+   ↓
+AI / Graph API
+   ↓
+Database
+```
+
+## Services
+
+```
+InstagramScraper
+InstagramParser
+InstagramGraphService
+ScaleDownClient
+PostAnalyzerAI
+ProfileInsightAggregator
+SchedulingService
+ContentGenerator
+InstagramPublisher
+```
+
+## Jobs
+
+```
+FetchInstagramPostsJob
+AnalyzePostJob
+AggregateProfileInsightsJob
+GenerateScheduleJob
+GenerateContentForScheduleJob
+PublishScheduledPostsJob
+```
+
+---
+
+# 🧱 Technologies & Versions
+
+- PHP 8.x
+- Laravel 10.x
+- MySQL 8+
+- ScaleDown API (GPT-4o)
+- Instagram Graph API v19+
+- Blade templates
+- Laravel filesystem
+
+---
+
+# 📷 Instagram Requirements
+
+To use publishing features:
+
+- Instagram Professional account
+- Linked Facebook Page
+- Meta Developer App
+- Instagram Graph API access token
+
+---
+
+# 📥 Installation & Usage
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/yourusername/social-agent.git
+cd social-agent
+```
+
+---
+
+## 2️⃣ Install Dependencies
+
+```bash
+composer install
+```
+
+---
+
+## 3️⃣ Environment Setup
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env`:
+
+```
+APP_URL=http://localhost
+
+DB_DATABASE=social_agent
+DB_USERNAME=root
+DB_PASSWORD=
+
+SCALEDOWN_API_KEY=YOUR_KEY
+```
+
+---
+
+## 4️⃣ Generate Key
+
+```bash
+php artisan key:generate
+```
+
+---
+
+## 5️⃣ Database Setup
+
+```bash
+php artisan migrate
+```
+
+---
+
+## 6️⃣ Storage Link
+
+```bash
+php artisan storage:link
+```
+
+---
+
+## 7️⃣ Queue Worker
+
+```bash
+php artisan queue:work
+```
+
+---
+
+## 8️⃣ Run Server
+
+```bash
+php artisan serve
+```
+
+---
+
+# 🔗 Connect Instagram Account
+
+Send API request:
+
+```
+POST /api/instagram/connect
+```
+
+Body:
+
+```json
+{
+    "instagram_business_id": "1784XXXX",
+    "page_id": "985XXXX",
+    "username": "your_ig",
+    "access_token": "PAGE_TOKEN"
+}
+```
+
+---
+
+# 📅 Schedule Post
+
+Open:
+
+```
+/schedule/create
+```
+
+Upload media, caption, schedule time.
+System will publish automatically.
+
+---
+
+## 📸 Schedule Post — Form View
+
+![Schedule Form](docs/images/schedule-form.png)
+
+> Replace with your real UI screenshot
+
+---
+
+# 📊 Dashboard
+
+View profile:
+
+```
+/dashboard/profile/{id}
+```
+
+Displays:
+
+- profile insights
+- posts
+- schedule
+
+---
+
+# 🔄 System Flow
+
+```
+Import Profile
+   ↓
+Analyze Posts
+   ↓
+Generate Strategy
+   ↓
+Create Schedule
+   ↓
+Generate Content
+   ↓
+Publish to Instagram
+```
+
+---
+
+# 📜 License
+
+MIT License
+
+---
+
+# 👨‍💻 Author
+
+**Rajat Dey**
+Autonomous Instagram Agent
+
+---
