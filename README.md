@@ -53,7 +53,6 @@ The system currently supports:
 
 ![Schedule Post Interface](docs/images/schedule-dashboard.png)
 
-> Replace the above image with your actual screenshot (`docs/images/...`)
 
 ---
 
