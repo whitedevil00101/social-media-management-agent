@@ -368,6 +368,7 @@ MIT License
 # 👨‍💻 Author
 
 **Rajat Dey**
+
 Autonomous Instagram Agent
 
 ---
